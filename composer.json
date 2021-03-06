@@ -1,0 +1,70 @@
+{
+    "name": "rubix/dl",
+    "type": "library",
+    "description": "A deep learning library for PHP based on TensorFlow.",
+    "homepage": "https://github.com/RubixML/DL",
+    "license": "MIT",
+    "keywords": [
+        "neural network"
+    ],
+    "authors": [
+        { 
+            "name": "Andrew DalPino",
+            "homepage": "https://github.com/andrewdalpino",
+            "role": "Lead Engineer"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/RubixML/Tensor/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "2.18.*",
+        "phalcon/zephir": "^0.12.20",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan": "0.12.*",
+        "phpstan/phpstan-phpunit": "0.12.*",
+        "phpunit/phpunit": "8.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zephir\\Optimizers\\FunctionCall\\": "optimizers/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rubix\\DL\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "build": [
+            "@composer validate",
+            "@composer install",
+            "@analyze",
+            "@test",
+            "@check"
+        ],
+        "analyze": "phpstan analyse -c phpstan.neon",
+        "check": [
+            "@putenv PHP_CS_FIXER_IGNORE_ENV=1",
+            "php-cs-fixer fix --config=.php_cs.dist -v --dry-run --using-cache=no"
+        ],
+        "clean": "zephir fullclean",
+        "compile": "zephir build --no-dev",
+        "fix": "php-cs-fixer fix --config=.php_cs.dist",
+        "test": "phpunit"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "process-timeout": 3000
+    },
+    "support": {
+        "email": "support@rubixml.com",
+        "issues": "https://github.com/RubixML/DL/issues",
+        "source": "https://github.com/RubixML/DL"
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "namespace": "dl",
+    "name": "dl",
+    "extension-name": "dl",
+    "description": "A deep learning library for PHP based on TensorFlow.",
+    "author": "Andrew DalPino",
+    "version": "0.0.1-alpha",
+    "verbose": true,
+    "extra-cflags": "-O3 -ffast-math",
+    "extra-libs": "-I/usr/local/include -L/usr/local/lib -ltensorflow",
+    "extra-sources": [
+        "include/settings.c"
+    ],
+    "optimizer-dirs": [
+        "optimizers"
+    ],
+    "optimizations": {
+        "static-type-inference": true,
+        "static-type-inference-second-pass": true,
+        "local-context-pass": true,
+        "constant-folding": true,
+        "static-constant-class-folding": true,
+        "call-gatherer-pass": true,
+        "check-invalid-reads": false,
+        "private-internal-methods": false,
+        "public-internal-methods": false,
+        "public-internal-functions": true
+    },
+    "warnings": {
+        "unused-variable": true,
+        "unused-variable-external": false,
+        "possible-wrong-parameter": true,
+        "possible-wrong-parameter-undefined": false,
+        "nonexistent-function": true,
+        "nonexistent-class": true
+    },
+    "extra": {
+        "export-classes": false,
+        "indent": "spaces"
+    }
+}
