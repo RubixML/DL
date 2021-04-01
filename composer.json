@@ -10,8 +10,9 @@
     "authors": [
         { 
             "name": "Andrew DalPino",
+            "role": "Project Lead",
             "homepage": "https://github.com/andrewdalpino",
-            "role": "Lead Engineer"
+            "email": "support@andrewdalpino.com"
         },
         {
             "name": "Contributors",
@@ -63,8 +64,8 @@
         "process-timeout": 3000
     },
     "support": {
-        "email": "support@rubixml.com",
         "issues": "https://github.com/RubixML/DL/issues",
-        "source": "https://github.com/RubixML/DL"
+        "source": "https://github.com/RubixML/DL",
+        "email": "support@andrewdalpino.com"
     }
 }
